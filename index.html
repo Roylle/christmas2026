@@ -11,8 +11,8 @@
   <meta name="theme-color" content="#c9202c" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23c9202c' d='M21 4v17.5a5 5 0 1 1-3-4.6V9l-8 2v13a5 5 0 1 1-3-4.6V7z'/%3E%3C/svg%3E" />
   <script>document.documentElement.classList.add('js')</script>
-  <script type="module" crossorigin src="./bundle/index-CIOOT9F7.js"></script>
-  <link rel="stylesheet" crossorigin href="./bundle/index-0GvslTGx.css">
+  <script type="module" crossorigin src="./bundle/index-O45g60J9.js"></script>
+  <link rel="stylesheet" crossorigin href="./bundle/index-DIaJiR-p.css">
 </head>
 <body>
   <canvas id="stage" aria-hidden="true"></canvas>
@@ -28,8 +28,8 @@
   <header class="bar" id="bar">
     <a class="bar__name" href="#open"><span class="bar__pre">A Tale Of </span>Two Christmas</a>
     <div class="bar__tools">
-      <button class="chip chip--wide" id="season-btn" type="button" aria-pressed="false">Sang mùa trưởng thành</button>
-      <button class="chip chip--wide" id="music-btn" type="button" aria-pressed="false">Bật hộp nhạc</button>
+      <button class="lever" id="season-btn" type="button" role="switch" aria-checked="false" aria-label="Mùa trưởng thành"><span class="lever__track"><span class="lever__knob"></span></span><span class="lever__text">Mùa trưởng thành</span></button>
+      <button class="chip chip--music" id="music-btn" type="button" aria-pressed="false" aria-label="Bật hộp nhạc"><svg class="note-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18.2V5.6l10-2.3v12.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="6.3" cy="18.4" rx="3" ry="2.3" fill="currentColor" transform="rotate(-18 6.3 18.4)"/><ellipse cx="16.3" cy="16" rx="3" ry="2.3" fill="currentColor" transform="rotate(-18 16.3 16)"/></svg><span class="chip__text">Bật hộp nhạc</span></button>
       <button class="chip" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Mục lục</button>
       <a class="chip chip--buy" href="https://orchestars.vn/events/ttc2026" target="_blank" rel="noopener">Mua vé</a>
     </div>
@@ -42,8 +42,8 @@
   <dialog class="menu" id="menu" aria-label="Mục lục">
     <div class="menu__list" id="menu-list"></div>
     <div class="menu__tools">
-      <button class="chip" id="season-btn-2" type="button">Sang mùa trưởng thành</button>
-      <button class="chip" id="music-btn-2" type="button">Bật hộp nhạc</button>
+      <button class="lever" id="season-btn-2" type="button" role="switch" aria-checked="false" aria-label="Mùa trưởng thành"><span class="lever__track"><span class="lever__knob"></span></span><span class="lever__text">Mùa trưởng thành</span></button>
+      <button class="chip chip--music" id="music-btn-2" type="button" aria-pressed="false" aria-label="Bật hộp nhạc"><svg class="note-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18.2V5.6l10-2.3v12.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="6.3" cy="18.4" rx="3" ry="2.3" fill="currentColor" transform="rotate(-18 6.3 18.4)"/><ellipse cx="16.3" cy="16" rx="3" ry="2.3" fill="currentColor" transform="rotate(-18 16.3 16)"/></svg><span class="chip__text">Bật hộp nhạc</span></button>
     </div>
     <button class="sheet__close" type="button" data-close>Đóng</button>
   </dialog>
