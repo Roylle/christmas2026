@@ -1,0 +1,21 @@
+{
+  "name": "christmas2026",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "prepare:languages": "python3 scripts/build.py",
+    "dev": "python3 scripts/build.py && vite --host 127.0.0.1",
+    "build": "python3 scripts/build.py && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "publish:files": "python3 scripts/publish-files.py"
+  },
+  "dependencies": {
+    "@fontsource/mali": "^5.3.0",
+    "roughjs": "^4.6.6",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.6"
+  }
+}

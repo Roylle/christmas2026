@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>A Tale Of Two Christmas 2026 | OrcheStars</title>
+  <meta name="description" content="Một buổi tối của giao hưởng, nhạc kịch Broadway và những giọng ca trong trẻo. 19–20.12.2026 tại Renaissance Riverside Sài Gòn, suất 18:00 và 20:30." />
+  <meta property="og:title" content="A Tale Of Two Christmas 2026" />
+  <meta property="og:description" content="Giáng Sinh đẹp nhất, khi ta ở bên nhau. 19–20.12.2026 tại Renaissance Riverside Sài Gòn." />
+  <meta property="og:image" content="./assets/hero-poster.webp" />
+  <meta name="theme-color" content="#c9202c" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23c9202c' d='M21 4v17.5a5 5 0 1 1-3-4.6V9l-8 2v13a5 5 0 1 1-3-4.6V7z'/%3E%3C/svg%3E" />
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="module" src="./language.js"></script>
+
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="./language.css">
+</head>
+<body>
+  <canvas id="stage" aria-hidden="true"></canvas>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg viewBox="0 0 320 90" class="loader__staff">
+      <g stroke="#7f9fd6" stroke-width="1.6" fill="none"><path d="M4 22c80-2 230 2 312 0"/><path d="M4 34c80 2 230-2 312 0"/><path d="M4 46c80-2 230 2 312 0"/><path d="M4 58c80 2 230-2 312 0"/><path d="M4 70c80-2 230 2 312 0"/></g>
+      <g id="loader-notes" fill="#23252f"></g>
+    </svg>
+    <p>Đang vẽ quyển tập nhạc</p>
+  </div>
+
+  <header class="bar" id="bar">
+    <a class="bar__name" href="#open"><span class="bar__pre">A Tale Of </span>Two Christmas</a>
+    <div class="bar__tools"><nav class="language" aria-label="Language / Ngôn ngữ"><a href="./?lang=vi" lang="vi" data-lang="vi">VI</a><a href="./en.html?lang=en" lang="en" data-lang="en">EN</a></nav>
+      <button class="lever" id="season-btn" type="button" role="switch" aria-checked="false" aria-label="Mùa trưởng thành"><span class="lever__track"><span class="lever__knob"></span></span><span class="lever__text">Mùa trưởng thành</span></button>
+      <button class="chip chip--music" id="music-btn" type="button" aria-pressed="false" aria-label="Bật hộp nhạc"><svg class="note-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18.2V5.6l10-2.3v12.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="6.3" cy="18.4" rx="3" ry="2.3" fill="currentColor" transform="rotate(-18 6.3 18.4)"/><ellipse cx="16.3" cy="16" rx="3" ry="2.3" fill="currentColor" transform="rotate(-18 16.3 16)"/></svg><span class="chip__text">Bật hộp nhạc</span></button>
+      <button class="chip" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Mục lục</button>
+      <a class="chip chip--buy" href="https://orchestars.vn/events/ttc2026" target="_blank" rel="noopener">Mua vé</a>
+    </div>
+  </header>
+
+  <div class="hot" id="hot" role="group" aria-label="Các vật có thể mở trong cảnh"></div>
+  <div class="season-story" id="season-story" role="status" aria-live="polite"><svg class="season-story__star" aria-hidden="true" viewBox="0 0 120 120"><path d="M60 4 75 40 114 44 84 70 93 110 60 89 26 110 35 70 6 44 45 40Z" fill="#efbd55" stroke="#8e4d28" stroke-width="2"/><path d="M60 4 60 62 114 44 84 70 60 62 93 110 60 89 60 62 26 110 35 70 60 62 6 44 45 40Z" fill="#c9202c" opacity=".65"/><path d="M60 4 60 89M6 44 84 70M114 44 35 70" stroke="#fff4ce" fill="none" opacity=".7"/></svg><strong></strong><p></p><span class="season-story__thread" aria-hidden="true"></span></div>
+  <div class="scene-controls" id="scene-controls" hidden></div>
+  <nav class="chapter-controls" aria-label="Chuyển chương"><button id="chapter-prev" type="button" aria-label="Chương trước">‹</button><div><span id="chapter-count">1 / 7</span><strong id="chapter-title">Mở đầu</strong></div><button id="chapter-next" type="button" aria-label="Chương tiếp theo">›</button></nav>
+  <nav class="dock" id="dock" aria-label="Các chương"></nav>
+  <div class="tip" id="tip" hidden></div>
+
+  <dialog class="menu" id="menu" aria-label="Mục lục">
+    <div class="menu__list" id="menu-list"></div>
+    <div class="menu__tools">
+      <button class="lever" id="season-btn-2" type="button" role="switch" aria-checked="false" aria-label="Mùa trưởng thành"><span class="lever__track"><span class="lever__knob"></span></span><span class="lever__text">Mùa trưởng thành</span></button>
+      <button class="chip chip--music" id="music-btn-2" type="button" aria-pressed="false" aria-label="Bật hộp nhạc"><svg class="note-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18.2V5.6l10-2.3v12.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="6.3" cy="18.4" rx="3" ry="2.3" fill="currentColor" transform="rotate(-18 6.3 18.4)"/><ellipse cx="16.3" cy="16" rx="3" ry="2.3" fill="currentColor" transform="rotate(-18 16.3 16)"/></svg><span class="chip__text">Bật hộp nhạc</span></button>
+    </div>
+    <button class="sheet__close" type="button" data-close>Đóng</button>
+  </dialog>
+
+  <dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+    <div id="sheet-body"></div>
+    <button class="sheet__close" type="button" data-close>Đóng</button>
+  </dialog>
+
+  <!-- Toàn bộ nội dung ở dạng chữ: cho trình đọc màn hình, bàn phím, máy tìm kiếm và máy không chạy được WebGL. -->
+  <main class="doc" id="doc">
+    <section id="open" data-chapter="0">
+      <img src="./assets/logotype-gold.webp" alt="" width="1627" height="515" class="doc__logo" />
+      <h1>A Tale Of Two Christmas 2026. Giáng Sinh bên nhau.</h1>
+      <p>Một buổi tối của giao hưởng, nhạc kịch Broadway và những giọng ca trong trẻo.</p>
+      <p>19—20.12.2026, Renaissance Riverside Sài Gòn. Suất 18:00 và 20:30 mỗi ngày.</p>
+      <p><a href="https://orchestars.vn/events/ttc2026" target="_blank" rel="noopener">Mua vé</a></p>
+    </section>
+    <section id="two" data-chapter="1">
+      <h2>Giáng Sinh đẹp nhất, khi ta ở bên nhau.</h2>
+      <p>Hãy cùng OrcheStars bước vào một hành trình âm nhạc qua những mùa Giáng Sinh, từ niềm háo hức chờ quà thời thơ bé đến những cảm xúc khi trưởng thành.</p>
+      <h3>Mùa thơ bé</h3>
+      <p>Niềm háo hức chờ quà, sắc đỏ rộn ràng và những giọng ca trong trẻo.</p>
+      <h3>Mùa trưởng thành</h3>
+      <p>Những cảm xúc khi đã lớn, khi giai điệu kinh điển gặp nhịp điệu đương đại.</p>
+      <p>Giao hưởng truyền thống và nhạc kịch Broadway kể hai sắc màu của cùng một mùa lễ hội.</p>
+    </section>
+    <section id="frames" data-chapter="2">
+      <h2>Qua những khung hình.</h2>
+      <p>Những nụ cười, những tràng vỗ tay. Những khoảnh khắc từ đêm nhạc Christmas 2025 của OrcheStars.</p>
+      <p>Khung hình tiếp theo có bạn. <a href="https://orchestars.vn/events/ttc2026" target="_blank" rel="noopener">Mua vé</a></p>
+    </section>
+    <section id="stories" data-chapter="3">
+      <h2>Những câu chuyện.</h2>
+      <p>Những sắc màu trong thế giới âm nhạc OrcheStars.</p>
+    </section>
+    <section id="tickets" data-chapter="4">
+      <h2>Một góc nhìn. Một buổi hẹn.</h2>
+      <p>Giá niêm yết cho một vé. Sơ đồ để tham khảo vị trí các khu vực; tình trạng ghế được cập nhật tại trang đặt vé.</p>
+      <img src="./assets/seating-map.svg" alt="Sơ đồ khán phòng" class="doc__seat" loading="lazy" />
+      <ul>
+        <li>First Class, ghế ngồi: 1.800.000đ</li>
+        <li>Premium, ghế ngồi: 1.200.000đ</li>
+        <li>Eco, ghế ngồi: 800.000đ</li>
+        <li>Standing, khu đứng: 200.000đ</li>
+      </ul>
+      <p><a href="https://orchestars.vn/events/ttc2026" target="_blank" rel="noopener">Mua vé</a></p>
+    </section>
+    <section id="venue" data-chapter="5">
+      <h2>Giữa lòng Sài Gòn.</h2>
+      <p>Renaissance Riverside Sài Gòn, 8–15 Tôn Đức Thắng, Phường Sài Gòn, TP. Hồ Chí Minh.</p>
+      <ul>
+        <li>17:15: bắt đầu check-in cho suất 18:00</li>
+        <li>19:45: bắt đầu check-in cho suất 20:30</li>
+      </ul>
+      <p>Áp dụng cho cả hai ngày 19 và 20.12.2026. Bạn nên có mặt trước giờ diễn ít nhất 30 phút.</p>
+      <p><a href="https://www.google.com/maps/dir/?api=1&destination=Renaissance+Riverside+Hotel+Saigon+8-15+Ton+Duc+Thang" target="_blank" rel="noopener">Mở chỉ đường</a></p>
+    </section>
+    <section id="faq" data-chapter="6">
+      <h2>Câu hỏi thường gặp.</h2>
+      <p>Thông tin để cả nhà yên tâm tận hưởng đêm nhạc. Cần thêm hỗ trợ? <a href="tel:+84906502925">0906 502 925</a></p>
+      <div id="doc-faq"></div>
+      <p><a href="https://orchestars.vn/events/ttc2026" target="_blank" rel="noopener">Xem đầy đủ thông tin và điều khoản sự kiện</a></p>
+    </section>
+    <footer data-chapter="6" id="doc-footer">
+      <p>Công ty Cổ phần Orchestars, 675-677 Đường Điện Biên Phủ, Phường 25, Quận Bình Thạnh, TP.HCM.</p>
+      <p>Giấy chứng nhận đăng ký doanh nghiệp số 0318788336, cấp lần đầu ngày 23.12.2024 bởi Sở Kế Hoạch và Đầu Tư TP. Hồ Chí Minh.</p>
+      <p><a href="tel:+84906502925">0906 502 925</a></p>
+      <p><a href="mailto:info@orchestars.vn">info@orchestars.vn</a></p>
+      <p><a href="https://www.orchestars.vn/terms-policies" target="_blank" rel="noopener">Điều khoản và Chính sách</a></p>
+      <p><a href="https://www.facebook.com/ochchildrenschoir" target="_blank" rel="noopener">Facebook</a></p>
+      <p><a href="https://www.instagram.com/orchestars.vn/" target="_blank" rel="noopener">Instagram</a></p>
+      <p><a href="https://www.tiktok.com/@orchestars" target="_blank" rel="noopener">TikTok</a></p>
+      <p><a href="https://www.youtube.com/@orchestars_vn" target="_blank" rel="noopener">YouTube</a></p>
+      <p>© 2025 Công ty Cổ phần Orchestars. All rights reserved.</p>
+    </footer>
+  </main>
+</body>
+</html>
