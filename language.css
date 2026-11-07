@@ -1,0 +1,10 @@
+.language{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1.5px solid currentColor;border-radius:18px;flex-shrink:0;font:700 12px Mali,sans-serif}
+.language a{display:grid;place-items:center;min-width:32px;min-height:32px;padding:0 3px;color:inherit;text-decoration:none;border-radius:13px}
+.language a[aria-current=true]{background:#c9202c;color:#fff}
+.language a:focus-visible{outline:3px solid #3971aa;outline-offset:2px}
+@media(max-width:600px){.bar{gap:6px}.bar__tools{gap:5px}.language a{min-width:29px}.bar__name{font-size:13px}.bar__tools>.chip{padding-left:9px;padding-right:9px}}
+html:not(.gl) .bar{display:flex}
+html:not(.gl) .bar__tools>.lever,html:not(.gl) #music-btn,html:not(.gl) #menu-btn{display:none}
+html.nogl .doc{padding-top:80px}
+@media(max-width:600px){.bar__tools{flex-wrap:wrap;justify-content:flex-end;max-width:100%}.bar__tools>.chip{font-size:12px}.bar{padding-left:10px;padding-right:10px}.language{background:var(--paper)}}
+@media(max-width:360px){.bar #music-btn{display:none}}

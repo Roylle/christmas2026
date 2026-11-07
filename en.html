@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>A Tale Of Two Christmas 2026 | OrcheStars</title>
+  <meta name="description" content="An evening of orchestral music, Broadway and pure young voices. 19–20 December 2026 at Renaissance Riverside Saigon. Shows at 18:00 and 20:30." />
+  <meta property="og:title" content="A Tale Of Two Christmas 2026" />
+  <meta property="og:description" content="Christmas is best together. 19–20 December 2026 at Renaissance Riverside Saigon." />
+  <meta property="og:image" content="./assets/hero-poster.webp" />
+  <meta name="theme-color" content="#c9202c" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23c9202c' d='M21 4v17.5a5 5 0 1 1-3-4.6V9l-8 2v13a5 5 0 1 1-3-4.6V7z'/%3E%3C/svg%3E" />
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="module" src="./language.js"></script>
+
+  <link rel="stylesheet" crossorigin href="./bundle/index-DIaJiR-p.css">
+  <link rel="stylesheet" href="./language.css">
+</head>
+<body>
+  <canvas id="stage" aria-hidden="true"></canvas>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg viewBox="0 0 320 90" class="loader__staff">
+      <g stroke="#7f9fd6" stroke-width="1.6" fill="none"><path d="M4 22c80-2 230 2 312 0"/><path d="M4 34c80 2 230-2 312 0"/><path d="M4 46c80-2 230 2 312 0"/><path d="M4 58c80 2 230-2 312 0"/><path d="M4 70c80-2 230 2 312 0"/></g>
+      <g id="loader-notes" fill="#23252f"></g>
+    </svg>
+    <p>Drawing your music book</p>
+  </div>
+
+  <header class="bar" id="bar">
+    <a class="bar__name" href="#open"><span class="bar__pre">A Tale Of </span>Two Christmas</a>
+    <div class="bar__tools"><nav class="language" aria-label="Language / Ngôn ngữ"><a href="./?lang=vi" lang="vi" data-lang="vi">VI</a><a href="./en.html?lang=en" lang="en" data-lang="en">EN</a></nav>
+      <button class="lever" id="season-btn" type="button" role="switch" aria-checked="false" aria-label="Grown-up Christmas"><span class="lever__track"><span class="lever__knob"></span></span><span class="lever__text">Grown-up Christmas</span></button>
+      <button class="chip chip--music" id="music-btn" type="button" aria-pressed="false" aria-label="Play music"><svg class="note-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18.2V5.6l10-2.3v12.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="6.3" cy="18.4" rx="3" ry="2.3" fill="currentColor" transform="rotate(-18 6.3 18.4)"/><ellipse cx="16.3" cy="16" rx="3" ry="2.3" fill="currentColor" transform="rotate(-18 16.3 16)"/></svg><span class="chip__text">Play music</span></button>
+      <button class="chip" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Contents</button>
+      <a class="chip chip--buy" href="https://orchestars.vn/events/ttc2026" target="_blank" rel="noopener">Tickets</a>
+    </div>
+  </header>
+
+  <div class="hot" id="hot" role="group" aria-label="Interactive objects in the scene"></div>
+  <nav class="dock" id="dock" aria-label="Chapters"></nav>
+  <div class="tip" id="tip" hidden></div>
+
+  <dialog class="menu" id="menu" aria-label="Contents">
+    <div class="menu__list" id="menu-list"></div>
+    <div class="menu__tools">
+      <button class="lever" id="season-btn-2" type="button" role="switch" aria-checked="false" aria-label="Grown-up Christmas"><span class="lever__track"><span class="lever__knob"></span></span><span class="lever__text">Grown-up Christmas</span></button>
+      <button class="chip chip--music" id="music-btn-2" type="button" aria-pressed="false" aria-label="Play music"><svg class="note-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18.2V5.6l10-2.3v12.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="6.3" cy="18.4" rx="3" ry="2.3" fill="currentColor" transform="rotate(-18 6.3 18.4)"/><ellipse cx="16.3" cy="16" rx="3" ry="2.3" fill="currentColor" transform="rotate(-18 16.3 16)"/></svg><span class="chip__text">Play music</span></button>
+    </div>
+    <button class="sheet__close" type="button" data-close>Close</button>
+  </dialog>
+
+  <dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+    <div id="sheet-body"></div>
+    <button class="sheet__close" type="button" data-close>Close</button>
+  </dialog>
+
+  <!-- Toàn bộ nội dung ở dạng chữ: cho trình đọc màn hình, bàn phím, máy tìm kiếm và máy không chạy được WebGL. -->
+  <main class="doc" id="doc">
+    <section id="open" data-chapter="0">
+      <img src="./assets/logotype-gold.webp" alt="" width="1627" height="515" class="doc__logo" />
+      <h1>A Tale Of Two Christmas 2026. Christmas together.</h1>
+      <p>An evening of orchestral music, Broadway and pure young voices.</p>
+      <p>19–20 December 2026, Renaissance Riverside Saigon. Shows at 18:00 and 20:30 daily.</p>
+      <p><a href="https://orchestars.vn/events/ttc2026" target="_blank" rel="noopener">Tickets</a></p>
+    </section>
+    <section id="two" data-chapter="1">
+      <h2>Christmas is best together.</h2>
+      <p>Join OrcheStars on a musical journey through Christmas, from childhood wonder to the emotions of growing up.</p>
+      <h3>Childhood Christmas</h3>
+      <p>The joy of gifts, festive reds and pure young voices.</p>
+      <h3>Grown-up Christmas</h3>
+      <p>A grown-up Christmas, where timeless melodies meet modern rhythms.</p>
+      <p>Orchestral music and Broadway tell two sides of one festive season.</p>
+    </section>
+    <section id="frames" data-chapter="2">
+      <h2>In pictures.</h2>
+      <p>Smiles, applause and memories from the OrcheStars Christmas 2025 concert.</p>
+      <p>Join the next photo. <a href="https://orchestars.vn/events/ttc2026" target="_blank" rel="noopener">Tickets</a></p>
+    </section>
+    <section id="stories" data-chapter="3">
+      <h2>Our stories.</h2>
+      <p>Explore the musical world of OrcheStars.</p>
+    </section>
+    <section id="tickets" data-chapter="4">
+      <h2>Your seat. Your evening.</h2>
+      <p>Prices are per ticket. The map shows seating areas; see the booking page for current availability.</p>
+      <img src="./assets/seating-map-en.svg" alt="Seating map" class="doc__seat" loading="lazy" />
+      <ul>
+        <li>First Class, seated: VND 1,800,000</li>
+        <li>Premium, seated: VND 1,200,000</li>
+        <li>Eco, seated: VND 800,000</li>
+        <li>Standing, standing: VND 200,000</li>
+      </ul>
+      <p><a href="https://orchestars.vn/events/ttc2026" target="_blank" rel="noopener">Tickets</a></p>
+    </section>
+    <section id="venue" data-chapter="5">
+      <h2>In the heart of Saigon.</h2>
+      <p>Renaissance Riverside Saigon, 8–15 Ton Duc Thang, Saigon Ward, Ho Chi Minh City.</p>
+      <ul>
+        <li>17:15: check-in opens for the 18:00 show</li>
+        <li>19:45: check-in opens for the 20:30 show</li>
+      </ul>
+      <p>For both 19 and 20 December 2026. Please arrive at least 30 minutes before the show.</p>
+      <p><a href="https://www.google.com/maps/dir/?api=1&destination=Renaissance+Riverside+Hotel+Saigon+8-15+Ton+Duc+Thang" target="_blank" rel="noopener">Directions</a></p>
+    </section>
+    <section id="faq" data-chapter="6">
+      <h2>Your questions.</h2>
+      <p>Everything your family needs for a lovely evening. Need help? <a href="tel:+84906502925">0906 502 925</a></p>
+      <div id="doc-faq"></div>
+      <p><a href="https://orchestars.vn/events/ttc2026" target="_blank" rel="noopener">View full event details and terms</a></p>
+    </section>
+    <footer data-chapter="6" id="doc-footer">
+      <p>Orchestars Joint Stock Company, 675–677 Dien Bien Phu Street, Ward 25, Binh Thanh District, Ho Chi Minh City.</p>
+      <p>Business registration certificate No. 0318788336, first issued on 23 December 2024 by the Ho Chi Minh City Department of Planning and Investment.</p>
+      <p><a href="tel:+84906502925">0906 502 925</a></p>
+      <p><a href="mailto:info@orchestars.vn">info@orchestars.vn</a></p>
+      <p><a href="https://www.orchestars.vn/terms-policies" target="_blank" rel="noopener">Terms and Policies</a></p>
+      <p><a href="https://www.facebook.com/ochchildrenschoir" target="_blank" rel="noopener">Facebook</a></p>
+      <p><a href="https://www.instagram.com/orchestars.vn/" target="_blank" rel="noopener">Instagram</a></p>
+      <p><a href="https://www.tiktok.com/@orchestars" target="_blank" rel="noopener">TikTok</a></p>
+      <p><a href="https://www.youtube.com/@orchestars_vn" target="_blank" rel="noopener">YouTube</a></p>
+      <p>© 2025 Orchestars Joint Stock Company. All rights reserved.</p>
+    </footer>
+  </main>
+</body>
+</html>
